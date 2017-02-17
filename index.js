@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-var PORT = 771
+var PORT = 80
 
 app.get("/", function (request, response) {
     response.send("In curand : fara intermediar, direct de la proprietar !");
