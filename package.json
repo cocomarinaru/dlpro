@@ -1,0 +1,22 @@
+{
+  "name": "dlpro",
+  "version": "1.0.0",
+  "description": "fara intermediar de la proprietar",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cocomarinaru/dlpro.git"
+  },
+  "keywords": [
+    "dlp"
+  ],
+  "author": "cocos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cocomarinaru/dlpro/issues"
+  },
+  "homepage": "https://github.com/cocomarinaru/dlpro#readme"
+}
