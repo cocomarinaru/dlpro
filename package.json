@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/cocomarinaru/dlpro.git"
   },
+   "dependencies": {
+    "express": "^4.13.3"
+  },
   "keywords": [
     "dlp"
   ],
