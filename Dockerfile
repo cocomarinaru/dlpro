@@ -5,7 +5,7 @@ RUN mkdir -p /home/dlpro/docker/app
 WORKDIR /home/dlpro/docker/app
 
 # Install app dependencies
-COPY package.json /usr/src/app/
+COPY package.json /home/dlpro/docker/app
 RUN npm install
 
 # Bundle app source
