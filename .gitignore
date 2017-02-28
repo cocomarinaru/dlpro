@@ -1,1 +1,4 @@
 node_modules
+.idea/dlpro.iml
+.idea/modules.xml
+.idea/workspace.xml
