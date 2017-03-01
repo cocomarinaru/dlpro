@@ -1,39 +1,40 @@
-"use strict";
+'use strict';
+
+var PORT = 777;
 
 var express = require("express");
-var hbs = require("expres-hbs");
-
 var app = express();
-var PORT = 80;
-
 
 app = express();
 
-// set the view engine
-app.set('view engine', 'hbs');
 
-// configure the view engine
-app.engine('hbs', hbs.express4({
-  defaultLayout: __dirname + '/views/layouts/default.hbs',
-  partialsDir: __dirname + '/views/partials',
-  layoutsDir: __dirname + '/views/layouts'
-}));
-
-// configure views path
-app.set('views', path.join(__dirname,'/views'));
+configure_handlebars(app);
 
 
 app.get("/", function (request, response) {
     response.send("In curand : fara intermediar, direct de la proprietar !");
 });
 
-app.get("/:name", function (request, response) {
+app.get("/test/:name", function (request, response) {
     var name = request.params.name;
-    response.send("Hello " + name);
+    response.render("test", {name: name, pageTitle: "My Title!"});
 });
 
 app.listen(process.env.PORT || PORT, function () {
     console.log("Listening on port: " + PORT);
 });
 
-app.post("");
+
+function configure_handlebars(app) {
+    var hbs = require('express-handlebars');
+
+    app.engine('.hbs', hbs(
+        {
+            defaultLayout: 'main.hbs',
+            partialsDir: __dirname + '/views/partials',
+            layoutsDir: __dirname + '/views/layouts',
+            extname: '.hbs'
+        }));
+    app.set('view engine', '.hbs');
+    app.set('views', __dirname + '/views');
+}
